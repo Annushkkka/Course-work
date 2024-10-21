@@ -26,13 +26,13 @@ public class Masters {
     @Column(name = "middle_name")
     private String middleName;
 
-    @Column(name = "specialization")
+    @Column(name = "specialization", nullable = false)
     private String specialization;
 
-    @Column(name = "grade_id")
+    @Column(name = "grade_id", nullable = false)
     private Integer gradeId; // Используем camelCase для переменных
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
     @Column(name = "email")
