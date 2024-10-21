@@ -24,7 +24,7 @@ public class Service {
     private String description; // Описание услуги
 
     @Column(name = "cost", nullable = false)
-    private Double cost; // Стоимость услуги
+    private Integer cost; // Стоимость услуги
 
     @Column(name = "duration", nullable = false)
     private String duration; // Длительность услуги (можно использовать типы данных, соответствующие вашей схеме)

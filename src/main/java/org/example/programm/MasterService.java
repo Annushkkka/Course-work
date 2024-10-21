@@ -15,7 +15,7 @@ public class MasterService {
     @Id
     @ManyToOne
     @JoinColumn(name = "master_id")
-    private Masters master; // Ссылка на мастера
+    private Masters masters; // Ссылка на мастера
 
     @Id
     @ManyToOne
