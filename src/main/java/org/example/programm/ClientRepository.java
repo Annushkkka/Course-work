@@ -4,9 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
-public interface ClientRepository extends JpaRepository<Master, Integer> {
+public interface ClientRepository extends JpaRepository<Client, Integer> {
     @Query("SELECT c FROM Client c " +
             "where concat(c.id, c.firstName, c.lastName, c.middleName, " +
             "c.birthDate, c.phone, c.email) LIKE %?1%")
-    List<Master> search(String keyword);
+    List<Client> search(String keyword);
 }

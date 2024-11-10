@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
-public interface MasterServiceRepository extends JpaRepository<Master, Integer> {
+public interface MasterServiceRepository extends JpaRepository<MasterService, Integer> {
     @Query("SELECT ms FROM MasterService ms " +
             "where concat(ms.master, ms.service) LIKE %?1%")
-    List<Master> search(String keyword);
+    List<MasterService> search(String keyword);
 }
