@@ -2,30 +2,27 @@ package org.example.programm;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "services") // Указываем имя таблицы в базе данных
+@Table(name = "service")
 public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id; // ID услуги
+    private Integer id;
 
-    @Column(name = "name", nullable = false)
-    private String name; // Название услуги
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
 
-    @Column(name = "description")
-    private String description; // Описание услуги
+    @Column(name = "base_price", nullable = false, precision = 10, scale = 2)
+    private Double basePrice;
 
-    @Column(name = "cost", nullable = false)
-    private Integer cost; // Стоимость услуги
-
-    @Column(name = "duration", nullable = false)
-    private String duration; // Длительность услуги (можно использовать типы данных, соответствующие вашей схеме)
+    @Column(name = "duration_minutes", nullable = false)
+    private Integer durationMinutes;
 }
