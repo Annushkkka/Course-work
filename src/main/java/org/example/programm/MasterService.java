@@ -2,23 +2,24 @@ package org.example.programm;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "master_services") // Указываем имя таблицы в базе данных
+@Table(name = "master_service")
 public class MasterService {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "master_id")
-    private Masters master; // Ссылка на мастера
+    @JoinColumn(name = "master_id", nullable = false)
+    private Master master;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "service_id")
-    private Service service; // Ссылка на услугу
+    @JoinColumn(name = "service_id", nullable = false)
+    private Service service;
 }
