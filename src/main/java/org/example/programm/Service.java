@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -21,7 +22,7 @@ public class Service {
     private String name;
 
     @Column(name = "base_price", nullable = false, precision = 10, scale = 2)
-    private Double basePrice;
+    private BigDecimal basePrice;
 
     @Column(name = "duration_minutes", nullable = false)
     private Integer durationMinutes;

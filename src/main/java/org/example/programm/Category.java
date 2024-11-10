@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -21,5 +22,5 @@ public class Category {
     private String name;
 
     @Column(name = "price_multiplier", nullable = false, precision = 3, scale = 2)
-    private Double priceMultiplier;
+    private BigDecimal priceMultiplier;
 }
