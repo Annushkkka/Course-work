@@ -1,4 +1,11 @@
 package org.example.programm;
 
-public interface CategoryRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import java.util.List;
+
+public interface CategoryRepository extends JpaRepository<Master, Integer> {
+    @Query("SELECT c FROM Category c " +
+            "where concat(c.id, c.name, c.priceMultiplier) LIKE %?1%")
+    List<Master> search(String keyword);
 }
