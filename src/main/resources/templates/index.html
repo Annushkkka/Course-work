@@ -9,14 +9,70 @@
 <body>
 <div class="row">
     <div class="col-md-8 offset-md-4">
-        <h3>Поиск стюдента по любому критерию:</h3>
+        <h3>Мастера</h3>
+        <h6>Поиск мастера по любому критерию:</h6>
         <form th:action="@{/}">
-            <input type="text" name="keyword" id="keyword" size="65" th:value="${keyword}">
+            <input type="text" name="keyword" id="keyword-master" size="65" th:value="${keyword}">
             <input type="submit" class="btn btn-success btn-sm" value="Поиск"/>
-            <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear" onelick="clearSearch"/>
+            <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear-master" onclick="clearSearch"/>
         </form>
     </div>
 </div>
+<table id="1" class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID мастера</th>
+        <th scope="col">Имя мастера</th>
+        <th scope="col">Фамилия мастера</th>
+        <th scope="col">Отчество мастера</th>
+        <th scope="col">День рождения мастера</th>
+        <th scope="col">Телефон мастера</th>
+        <th scope="col">Почта мастера</th>
+        <th scope="col">ID категории мастера</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="master: ${masterList}">
+        <th scope="row" class="text-black" th:text="${master.id}"></th>
+        <th scope="row" class="text-black" th:text="${master.firstName}"></th>
+        <th scope="row" class="text-black" th:text="${master.lastName}"></th>
+        <th scope="row" class="text-black" th:text="${master.middleName}"></th>
+        <th scope="row" class="text-black" th:text="${master.birthDate}"></th>
+        <th scope="row" class="text-black" th:text="${master.phone}"></th>
+        <th scope="row" class="text-black" th:text="${master.email}"></th>
+        <th scope="row" class="text-black" th:text="${master.category}"></th>
+    </tr>
+    </tbody>
+</table>
+<div class="row">
+<div class="col-md-8 offset-md-4">
+    <h3>Услуги</h3>
+    <h6>Поиск услуги по любому критерию:</h6>
+    <form th:action="@{/}">
+        <input type="text" name="keyword" id="keyword-service" size="65" th:value="${keyword}">
+        <input type="submit" class="btn btn-success btn-sm" value="Поиск"/>
+        <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear-service" onclick="clearSearch"/>
+    </form>
+</div>
+</div>
+<table id="2" class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID услуги</th>
+        <th scope="col">Название услуги</th>
+        <th scope="col">Базовая стоимость услуги</th>
+        <th scope="col">Продолжительность услуги</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="service: ${serviceList}">
+        <th scope="row" class="text-black" th:text="${service.id}"></th>
+        <th scope="row" class="text-black" th:text="${service.name}"></th>
+        <th scope="row" class="text-black" th:text="${service.base_price}"></th>
+        <th scope="row" class="text-black" th:text="${service.duration_minutes}"></th>
+    </tr>
+    </tbody>
+</table>
 <script type="text/javascript">
     function clearSearch() {
         window.location = "[[@{/}]]"
