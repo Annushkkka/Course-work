@@ -17,6 +17,9 @@ public class BarbershopController {
         List<Master> masterlist = barbershopService.getAllMasters(keyword);
         model.addAttribute("masterList", masterlist);
         model.addAttribute("keyword", keyword);
+        List<Service> servicelist = barbershopService.getAllServices(keyword);
+        model.addAttribute("serviceList", servicelist);
+        model.addAttribute("keyword", keyword);
         return "index";
     }
 }

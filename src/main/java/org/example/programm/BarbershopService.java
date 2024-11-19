@@ -16,8 +16,6 @@ public class BarbershopService {
     @Autowired
     private CategoryRepository repoCategory;
     @Autowired
-    private AppointmentRepository repoAppointment;
-    @Autowired
     private MasterServiceRepository repoMasterService;
 
     // Методы для класса Master
