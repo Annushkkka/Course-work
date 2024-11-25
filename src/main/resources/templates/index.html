@@ -2,109 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
     <title>Информационно-справочная система барбершопа</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<div class="container mt-5">
-    <!-- Навигационные вкладки -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="masters-tab" data-bs-toggle="tab" data-bs-target="#masters" type="button"
-                    role="tab" aria-controls="masters" aria-selected="true">Мастера</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button"
-                    role="tab" aria-controls="services" aria-selected="false">Услуги</button>
-        </li>
-    </ul>
-
-    <!-- Контент вкладок -->
-    <div class="tab-content" id="myTabContent">
-        <!-- Вкладка "Мастера" -->
-        <div class="tab-pane fade show active" id="masters" role="tabpanel" aria-labelledby="masters-tab">
-            <div class="row mt-4">
-                <div class="col-md-8 offset-md-4">
-                    <h3>Мастера</h3>
-                    <h6>Поиск мастера по любому критерию:</h6>
-                    <form th:action="@{/}">
-                        <input type="text" name="keyword" id="keyword-master" size="65" th:value="${keyword}">
-                        <input type="submit" class="btn btn-success btn-sm" value="Поиск"/>
-                        <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear-master" onclick="clearSearch()"/>
-                    </form>
-                </div>
-            </div>
-            <table class="table table-striped table-hover mt-3">
-                <thead>
-                <tr>
-                    <th scope="col">ID мастера</th>
-                    <th scope="col">Имя мастера</th>
-                    <th scope="col">Фамилия мастера</th>
-                    <th scope="col">Отчество мастера</th>
-                    <th scope="col">День рождения мастера</th>
-                    <th scope="col">Телефон мастера</th>
-                    <th scope="col">Почта мастера</th>
-                    <th scope="col">ID категории мастера</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="master: ${masterList}">
-                    <th scope="row" class="text-black" th:text="${master.id}"></th>
-                    <th scope="row" class="text-black" th:text="${master.firstName}"></th>
-                    <th scope="row" class="text-black" th:text="${master.lastName}"></th>
-                    <th scope="row" class="text-black" th:text="${master.middleName}"></th>
-                    <th scope="row" class="text-black" th:text="${master.birthDate}"></th>
-                    <th scope="row" class="text-black" th:text="${master.phone}"></th>
-                    <th scope="row" class="text-black" th:text="${master.email}"></th>
-                    <th scope="row" class="text-black" th:text="${master.category}"></th>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Вкладка "Услуги" -->
-        <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
-            <div class="row mt-4">
-                <div class="col-md-8 offset-md-4">
-                    <h3>Услуги</h3>
-                    <h6>Поиск услуги по любому критерию:</h6>
-                    <form th:action="@{/}">
-                        <input type="text" name="keyword" id="keyword-service" size="65" th:value="${keyword}">
-                        <input type="submit" class="btn btn-success btn-sm" value="Поиск"/>
-                        <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear-service" onclick="clearSearch()"/>
-                    </form>
-                </div>
-            </div>
-            <table class="table table-striped table-hover mt-3">
-                <thead>
-                <tr>
-                    <th scope="col">ID услуги</th>
-                    <th scope="col">Название услуги</th>
-                    <th scope="col">Базовая стоимость услуги</th>
-                    <th scope="col">Продолжительность услуги</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="service: ${servicelist}">
-                    <th scope="row" class="text-black" th:text="${service.id}"></th>
-                    <th scope="row" class="text-black" th:text="${service.name}"></th>
-                    <th scope="row" class="text-black" th:text="${service.base_price}"></th>
-                    <th scope="row" class="text-black" th:text="${service.duration_minutes}"></th>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+jHvh+3Wjp3JdI6tkpU6pM6voW8FKB8w3/4" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    function clearSearch() {
-        window.location = "[[@{/}]]"
-    }
-</script>
+<h1>Добро пожаловать в барбершоп!</h1>
+<p>Выберите, куда вы хотите перейти:</p>
+<ul>
+    <li><a href="/master/">Мастеры</a></li>
+    <li><a href="/service/">Услуги</a></li>
+</ul>
 </body>
 </html>
