@@ -1,0 +1,29 @@
+/* Пример общих стилей */
+
+/* Стили для таблиц */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; /* Уменьшить ширину таблицы */
+}
+
+/* Стили для кнопок */
+.btn-custom-search {
+    background-color: #007bff; /* Синий */
+    color: white;
+}
+
+.btn-custom-clear {
+    background-color: #dc3545; /* Красный */
+    color: white;
+}
+
+.btn-custom-search:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.btn-custom-clear:hover {
+    background-color: #a71d2a;
+    color: white;
+}
