@@ -43,6 +43,7 @@ public class BarbershopService {
         }
         return repoService.findAll();
     }
+
     // Получение информации по услуге
     public org.example.programm.Service getService(Integer id) {
         return repoService.findById(id).get();
@@ -53,13 +54,14 @@ public class BarbershopService {
     }
 
     // Методы для класса Client
-    // Вывод всех услуг
+    // Вывод всех клиентов
     public List<Client> getAllClient(String keyword) {
         if (keyword != null) {
             return repoClient.search(keyword);
         }
         return repoClient.findAll();
     }
+
     // Получение информации по услуге
     public Client getClient(Integer id) {
         return repoClient.findById(id).get();

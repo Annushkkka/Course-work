@@ -39,7 +39,7 @@ public class BarbershopController {
     @GetMapping("/client/")
     public String client(Model model, @Param("keyword")String keyword) {
         List<Client> clientlist = barbershopService.getAllClient(keyword);
-        model.addAttribute("serviceList", clientlist);
+        model.addAttribute("clientList", clientlist);
         model.addAttribute("keyword", keyword);
         return "client";
     }
