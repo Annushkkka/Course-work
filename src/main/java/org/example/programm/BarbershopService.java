@@ -52,6 +52,22 @@ public class BarbershopService {
         repoService.deleteById(id);
     }
 
+    // Методы для класса Client
+    // Вывод всех услуг
+    public List<Client> getAllClient(String keyword) {
+        if (keyword != null) {
+            return repoClient.search(keyword);
+        }
+        return repoClient.findAll();
+    }
+    // Получение информации по услуге
+    public Client getClient(Integer id) {
+        return repoClient.findById(id).get();
+    }
+    // Удаление услуги
+    public void deleteClient(Integer id) {
+        repoClient.deleteById(id);
+    }
 
 
 }

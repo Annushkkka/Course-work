@@ -36,6 +36,14 @@ public class BarbershopController {
         return "service";
     }
 
+    @GetMapping("/client/")
+    public String client(Model model, @Param("keyword")String keyword) {
+        List<Client> clientlist = barbershopService.getAllClient(keyword);
+        model.addAttribute("serviceList", clientlist);
+        model.addAttribute("keyword", keyword);
+        return "client";
+    }
+
     @PostMapping("/master/delete/{id}")
     public String deletemaster(@PathVariable Integer id) {
         barbershopService.deleteMaster(id);

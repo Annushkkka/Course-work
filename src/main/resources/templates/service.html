@@ -7,7 +7,7 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+<div class="tab-pane fade show active" id="service" role="tabpanel" aria-labelledby="service-tab">
     <div class="row mt-4">
         <div class="col-md-8 offset-md-4">
             <h3>Услуги</h3>
@@ -29,11 +29,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="service: ${servicelist}">
+        <tr th:each="service: ${serviceList}">
             <th scope="row" class="text-black" th:text="${service.id}"></th>
             <th scope="row" class="text-black" th:text="${service.name}"></th>
-            <th scope="row" class="text-black" th:text="${service.base_price}"></th>
-            <th scope="row" class="text-black" th:text="${service.duration_minutes}"></th>
+            <th scope="row" class="text-black" th:text="${service.basePrice}"></th>
+            <th scope="row" class="text-black" th:text="${service.durationMinutes}"></th>
         </tr>
         </tbody>
     </table>
