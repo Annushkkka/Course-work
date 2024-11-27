@@ -2,6 +2,7 @@ package org.example.programm;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -33,6 +34,10 @@ public class BarbershopService {
     //Удаление мастера
     public void deleteMaster(Integer id) {
         repoMaster.deleteById(id);
+    }
+    //Сохранение мастера
+    public void saveMaster(@ModelAttribute("master") Master master) {
+        repoMaster.save(master);
     }
 
     // Методы для класса Service

@@ -45,9 +45,22 @@
                 <th scope="row" class="text-black" th:text="${master.phone}"></th>
                 <th scope="row" class="text-black" th:text="${master.email}"></th>
                 <th scope="row" class="text-black" th:text="${master.category}"></th>
+                <td>
+                    <a th:href="@{'/master/edit/'+${master.id}}">
+                        <button type="button" class="btn-custom-search">Редактировать</button>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="@{'/master/delete/'+${master.id}}">
+                        <button type="button" class="btn-custom-clear">Удалить</button>
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>
+    <a th:href="@{/master/new}">
+        <button type="button" class="btn-custom-search">Добавить нового мастера</button>
+    </a>
 </div>
 
 <!-- Bootstrap JS -->

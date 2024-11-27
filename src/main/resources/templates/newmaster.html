@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить мастера</title>
+    <header th:replace="master :: head"></header>
+</head>
+<body class="other_page">
+<button class="back-button" onclick="goback()">Назад</button>
+<h1>Добавить нового мастера</h1>
+<div class="table">
+    <div class="col-md-8 offset-md-4">
+        <form th:action="@{/master/save}" th:obgect="${master}" method="post">
+            <table>
+                <tr>
+                    <td>Имя мастера</td>
+                    <td><input type="text" th:field="*{master.firstName}"></td>
+                </tr>
+                <tr>
+                    <td>Фамилия мастера</td>
+                    <td><input type="text" th:field="*{master.lastName}"></td>
+                </tr>
+                <tr>
+                    <td>Отчество мастера</td>
+                    <td><input type="text" th:field="*{master.middleName}"></td>
+                </tr>
+                <tr>
+                    <td>День рождения мастера</td>
+                    <td><input type="text" th:field="*{master.birthDate}"></td>
+                </tr>
+                <tr>
+                    <td>Телефон мастера</td>
+                    <td><input type="text" th:field="*{master.phone}"></td>
+                </tr>
+                <tr>
+                    <td>Почта мастера</td>
+                    <td><input type="text" th:field="*{master.email}"></td>
+                </tr>
+                <tr>
+                    <td>ID категории мастера</td>
+                    <td><input type="text" th:field="*{master.category}"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn-custom-search" data-toogle="button" aria-pressed="false" aria-autocomplete="off">Сохранить</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+jHvh+3Wjp3JdI6tkpU6pM6voW8FKB8w3/4" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function goback() {
+        window.location = "[[@{/master/}]]"
+    }
+</script>
+</body>
+</html>

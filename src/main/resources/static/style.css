@@ -55,6 +55,7 @@ body.other_page {
 /* Заголовк и текст */
 h1, p {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Центрирование заголовков */
