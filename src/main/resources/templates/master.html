@@ -22,32 +22,32 @@
             </form>
         </div>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID мастера</th>
-            <th scope="col">Имя мастера</th>
-            <th scope="col">Фамилия мастера</th>
-            <th scope="col">Отчество мастера</th>
-            <th scope="col">День рождения мастера</th>
-            <th scope="col">Телефон мастера</th>
-            <th scope="col">Почта мастера</th>
-            <th scope="col">ID категории мастера</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="master: ${masterList}">
-            <th scope="row" class="text-black" th:text="${master.id}"></th>
-            <th scope="row" class="text-black" th:text="${master.firstName}"></th>
-            <th scope="row" class="text-black" th:text="${master.lastName}"></th>
-            <th scope="row" class="text-black" th:text="${master.middleName}"></th>
-            <th scope="row" class="text-black" th:text="${master.birthDate}"></th>
-            <th scope="row" class="text-black" th:text="${master.phone}"></th>
-            <th scope="row" class="text-black" th:text="${master.email}"></th>
-            <th scope="row" class="text-black" th:text="${master.category}"></th>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID мастера</th>
+                <th scope="col">Имя мастера</th>
+                <th scope="col">Фамилия мастера</th>
+                <th scope="col">Отчество мастера</th>
+                <th scope="col">День рождения мастера</th>
+                <th scope="col">Телефон мастера</th>
+                <th scope="col">Почта мастера</th>
+                <th scope="col">ID категории мастера</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="master: ${masterList}">
+                <th scope="row" class="text-black" th:text="${master.id}"></th>
+                <th scope="row" class="text-black" th:text="${master.firstName}"></th>
+                <th scope="row" class="text-black" th:text="${master.lastName}"></th>
+                <th scope="row" class="text-black" th:text="${master.middleName}"></th>
+                <th scope="row" class="text-black" th:text="${master.birthDate}"></th>
+                <th scope="row" class="text-black" th:text="${master.phone}"></th>
+                <th scope="row" class="text-black" th:text="${master.email}"></th>
+                <th scope="row" class="text-black" th:text="${master.category}"></th>
+            </tr>
+            </tbody>
+        </table>
 </div>
 
 <!-- Bootstrap JS -->
