@@ -62,11 +62,65 @@ public class BarbershopController {
         return "service";
     }
 
+    @GetMapping("/service/delete/{id}")
+    public String deleteService(@PathVariable Integer id) {
+        barbershopService.deleteService(id);
+        return "redirect:/service/";
+    }
+
+    @RequestMapping("/service/new")
+    public String newService(Model model) {
+        Service service = new Service();
+        model.addAttribute("service", service);
+        return "newservice"; // Шаблон для создания новой услуги
+    }
+
+    @PostMapping("/service/save")
+    public String saveService(@ModelAttribute("service") Service service) {
+        barbershopService.saveService(service);
+        return "redirect:/service/";
+    }
+
+    @GetMapping("/service/edit/{id}")
+    public ModelAndView editService(@PathVariable Integer id) {
+        ModelAndView mav = new ModelAndView("editservice");
+        Service service = barbershopService.getService(id);
+        mav.addObject("service", service);
+        return mav;
+    }
+
     @GetMapping("/client/")
     public String client(Model model, @Param("keyword")String keyword) {
         List<Client> clientlist = barbershopService.getAllClient(keyword);
         model.addAttribute("clientList", clientlist);
         model.addAttribute("keyword", keyword);
         return "client";
+    }
+
+    @GetMapping("/client/delete/{id}")
+    public String deleteClient(@PathVariable Integer id) {
+        barbershopService.deleteClient(id);
+        return "redirect:/client/";
+    }
+
+    @RequestMapping("/client/new")
+    public String newClient(Model model) {
+        Client client = new Client();
+        model.addAttribute("client", client);
+        return "newclient"; // Шаблон для создания нового клиента
+    }
+
+    @PostMapping("/client/save")
+    public String saveClient(@ModelAttribute("client") Client client) {
+        barbershopService.saveClient(client);
+        return "redirect:/client/";
+    }
+
+    @GetMapping("/client/edit/{id}")
+    public ModelAndView editClient(@PathVariable Integer id) {
+        ModelAndView mav = new ModelAndView("editclient");
+        Client client = barbershopService.getClient(id);
+        mav.addObject("client", client);
+        return mav;
     }
 }

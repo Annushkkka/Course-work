@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Добавить мастера</title>
+    <title>Добавить клиента</title>
     <header th:replace="master :: head"></header>
 </head>
 <body class="other_page">
@@ -10,38 +10,34 @@
     <!-- Кнопка перехода -->
     <button class="back-button" onclick="goback()">< Назад</button>
 </div>
-<h1>Добавить нового мастера</h1>
+<h1>Добавить нового клиента</h1>
 <div class="table">
     <div class="col-md-8 offset-md-4">
-        <form th:action="@{/master/save}" th:obgect="${master}" method="post">
+        <form th:action="@{/master/save}" th:obgect="${client}" method="post">
             <table>
                 <tr>
-                    <td>Имя мастера</td>
-                    <td><input type="text" th:field="*{master.firstName}"></td>
+                    <td>Имя клиента</td>
+                    <td><input type="text" th:field="*{client.firstName}"></td>
                 </tr>
                 <tr>
-                    <td>Фамилия мастера</td>
-                    <td><input type="text" th:field="*{master.lastName}"></td>
+                    <td>Фамилия клиента</td>
+                    <td><input type="text" th:field="*{client.lastName}"></td>
                 </tr>
                 <tr>
-                    <td>Отчество мастера</td>
-                    <td><input type="text" th:field="*{master.middleName}"></td>
+                    <td>Отчество клиента</td>
+                    <td><input type="text" th:field="*{client.middleName}"></td>
                 </tr>
                 <tr>
-                    <td>День рождения мастера</td>
-                    <td><input type="text" th:field="*{master.birthDate}"></td>
+                    <td>День рождения клиента</td>
+                    <td><input type="text" th:field="*{client.birthDate}"></td>
                 </tr>
                 <tr>
-                    <td>Телефон мастера</td>
-                    <td><input type="text" th:field="*{master.phone}"></td>
+                    <td>Телефон клиента</td>
+                    <td><input type="text" th:field="*{client.phone}"></td>
                 </tr>
                 <tr>
-                    <td>Почта мастера</td>
-                    <td><input type="text" th:field="*{master.email}"></td>
-                </tr>
-                <tr>
-                    <td>ID категории мастера</td>
-                    <td><input type="text" th:field="*{master.category}"></td>
+                    <td>Почта клиента</td>
+                    <td><input type="text" th:field="*{client.email}"></td>
                 </tr>
                 <tr>
                     <td>
@@ -57,7 +53,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+jHvh+3Wjp3JdI6tkpU6pM6voW8FKB8w3/4" crossorigin="anonymous"></script>
 <script type="text/javascript">
     function goback() {
-        window.location = "[[@{/master/}]]"
+        window.location = "[[@{/client/}]]"
     }
 </script>
 </body>

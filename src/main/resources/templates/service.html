@@ -11,8 +11,8 @@
 <div class="back-button-container">
     <!-- Кнопка перехода -->
     <button class="back-button" onclick="goToHome()">< На главную</button>
-    <!-- Кнопка добавления
-    <button class="edit-button" onclick="editmaster()">+ Добавить нового мастера</button>-->
+    <!-- Кнопка добавления-->
+    <button class="edit-button" onclick="editservice()">+ Добавить нового мастера</button>
 </div>
 <div class="tab-pane fade show active" id="masters" role="tabpanel" aria-labelledby="masters-tab">
     <div style="margin-top: 40px;">
@@ -50,6 +50,16 @@
             <th scope="row" class="text-black" th:text="${service.name}"></th>
             <th scope="row" class="text-black" th:text="${service.basePrice}"></th>
             <th scope="row" class="text-black" th:text="${service.durationMinutes}"></th>
+            <td>
+                <a th:href="@{'/service/edit/'+${service.id}}">
+                    <button type="button" class="btn-custom-search">Редактировать</button>
+                </a>
+            </td>
+            <td>
+                <a th:href="@{'/service/delete/'+${service.id}}">
+                    <button type="button" class="btn-custom-clear">Удалить</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -65,6 +75,10 @@
     // Функция для перехода на стартовую страницу
     function goToHome() {
         window.location = "[[@{/}]]"
+    }
+    // Функция для перехода на стартовую страницу
+    function editservice() {
+        window.location = "[[@{/service/new}]]"
     }
 </script>
 </body>

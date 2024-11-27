@@ -40,6 +40,7 @@ public class BarbershopService {
         repoMaster.save(master);
     }
 
+
     // Методы для класса Service
     // Вывод всех услуг
     public List<org.example.programm.Service> getAllServices(String keyword) {
@@ -48,7 +49,6 @@ public class BarbershopService {
         }
         return repoService.findAll();
     }
-
     // Получение информации по услуге
     public org.example.programm.Service getService(Integer id) {
         return repoService.findById(id).get();
@@ -57,6 +57,11 @@ public class BarbershopService {
     public void deleteService(Integer id) {
         repoService.deleteById(id);
     }
+    //Сохранение услуг
+    public void saveService(@ModelAttribute("service") org.example.programm.Service service) {
+        repoService.save(service);
+    }
+
 
     // Методы для класса Client
     // Вывод всех клиентов
@@ -66,7 +71,6 @@ public class BarbershopService {
         }
         return repoClient.findAll();
     }
-
     // Получение информации по услуге
     public Client getClient(Integer id) {
         return repoClient.findById(id).get();
@@ -75,6 +79,9 @@ public class BarbershopService {
     public void deleteClient(Integer id) {
         repoClient.deleteById(id);
     }
-
+    //Сохранение клиентов
+    public void saveClient(@ModelAttribute("client") Client client) {
+        repoClient.save(client);
+    }
 
 }
