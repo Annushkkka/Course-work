@@ -1,0 +1,72 @@
+/* Пример общих стилей */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+}
+.container {
+    text-align: center;
+}
+h1, p {
+    margin-bottom: 20px;
+}
+
+/* Центрирование заголовков */
+h3, h6 {
+    text-align: center;
+}
+
+.btn-block {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: #4A5FC1;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 10px;  /* Сглаживание углов */
+    border: none;  /* Убираем обводку */
+    outline: none;  /* Убираем обводку при фокусе */
+}
+
+.btn-block:hover {
+    color: black;
+    background-color: #E5B9A8;
+}
+
+/* Таблица: добавление отступа сверху */
+.table {
+    margin-top: 30px;
+}
+
+/* Стили для кнопок */
+.btn-custom-search {
+    background-color: #4A5FC1; /* Синий */
+    color: white;
+    border-radius: 5px;  /* Сглаживание углов */
+    border: none;  /* Убираем обводку */
+    outline: none;  /* Убираем обводку при фокусе */
+}
+
+.btn-custom-clear {
+    background-color: #E5B9A8; /* Красный */
+    color: white;
+    border-radius: 5px;  /* Сглаживание углов */
+    border: none;  /* Убираем обводку */
+    outline: none;  /* Убираем обводку при фокусе */
+}
+
+.btn-custom-search:hover {
+    background-color: #4A5FC1;
+    color: white;
+}
+
+.btn-custom-clear:hover {
+    background-color: #E5B9A8;
+    color: white;
+}
