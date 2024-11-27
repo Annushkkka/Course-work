@@ -20,7 +20,7 @@ body.other_page {
     text-align: center;
     margin: 0;
     padding-top: 50px;
-    background-color: #E6E2DD
+    background-color: #E6E2DD;
 }
 
 /* Контейнер на главной странице */
@@ -59,17 +59,16 @@ h1, p {
 }
 
 /* Центрирование заголовков */
-h3, h6 {
+h3{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 /* Текст над таблицами */
 .body_table {
-    justify-content: center;
-    align-items: center;
+    top: 200px;
     height: 120px;
-    text-align: center;
-    margin: 0;
+    width: 1500px;
 }
 
 /* Кнопки на главной странице */
@@ -100,13 +99,19 @@ h3, h6 {
     width: 1500px;
 }
 
+/* Подсветка нечетных строк таблицы */
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Светлый фон для нечетных строк */
+}
+
 /* Кнопка Поиск */
 .btn-custom-search {
-    background-color: #6BB77B; /* Синий */
+    background-color: #8CA273;
     color: white;
     border-radius: 5px;  /* Сглаживание углов */
     border: none;  /* Убираем обводку */
     outline: none;  /* Убираем обводку при фокусе */
+    padding: 5px 15px;
 }
 
 /* Очистить */
@@ -116,6 +121,7 @@ h3, h6 {
     border-radius: 5px;  /* Сглаживание углов */
     border: none;  /* Убираем обводку */
     outline: none;  /* Убираем обводку при фокусе */
+    padding: 5px 15px;
 }
 
 /* Кнопка Поиск при наведении */
@@ -132,9 +138,7 @@ h3, h6 {
 
 /* Стили для кнопки назад */
 .back-button {
-    position: absolute;
-    top: 5px;
-    left: 5px;
+
     padding: 5px 15px;
     font-size: 16px;
     color: white;
@@ -142,9 +146,45 @@ h3, h6 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin-left: 0;
 }
 
 /* Стили для кнопки назад при наведении*/
 .back-button:hover {
     background-color: #373A36; /* Темно-синий при наведении */
 }
+
+/* Стили для кнопки добавить */
+.edit-button {
+    padding: 5px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #8CA273;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-right: 0;
+}
+
+/* Стили для кнопки назад при наведении*/
+.edit-button:hover {
+    background-color: #373A36; /* Темно-синий при наведении */
+}
+
+/* Убираем подчеркивание у ссылок внутри кнопок */
+.edit-button a {
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Контейнер для кнопки */
+.back-button-container {
+    display: flex;
+    justify-content: space-between; /* Размещаем кнопки по краям контейнера */
+    width: 100%;                 /* Контейнер занимает всю ширину страницы */
+    max-width: 1500px;           /* Ширина контейнера ограничена 1500px */
+    margin-left: auto;           /* Контейнер выравнивается по правому краю */
+    margin-right: auto;          /* Центрируем контейнер по горизонтали */
+}
+
