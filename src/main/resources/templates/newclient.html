@@ -10,42 +10,44 @@
     <!-- Кнопка перехода -->
     <button class="back-button" onclick="goback()">< Назад</button>
 </div>
-<h1>Добавить нового клиента</h1>
-<div class="table">
-    <div class="col-md-8 offset-md-4">
-        <form th:action="@{/master/save}" th:obgect="${client}" method="post">
-            <table>
-                <tr>
-                    <td>Имя клиента</td>
-                    <td><input type="text" th:field="*{client.firstName}"></td>
-                </tr>
-                <tr>
-                    <td>Фамилия клиента</td>
-                    <td><input type="text" th:field="*{client.lastName}"></td>
-                </tr>
-                <tr>
-                    <td>Отчество клиента</td>
-                    <td><input type="text" th:field="*{client.middleName}"></td>
-                </tr>
-                <tr>
-                    <td>День рождения клиента</td>
-                    <td><input type="text" th:field="*{client.birthDate}"></td>
-                </tr>
-                <tr>
-                    <td>Телефон клиента</td>
-                    <td><input type="text" th:field="*{client.phone}"></td>
-                </tr>
-                <tr>
-                    <td>Почта клиента</td>
-                    <td><input type="text" th:field="*{client.email}"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit" class="btn-custom-search" data-toogle="button" aria-pressed="false" aria-autocomplete="off">Сохранить</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
+<div>
+    <h1>Добавить нового клиента</h1>
+    <div class="d-flex justify-content-center">
+        <div class="col-md-15">
+            <form th:action="@{/client/save}" th:obgect="${client}" method="post">
+                <table style="width: 120%;">
+                    <tr>
+                        <td style="text-align: left;">Имя клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.firstName}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Фамилия клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.lastName}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Отчество клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.middleName}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">День рождения клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.birthDate}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Телефон клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.phone}"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Почта клиента</td>
+                        <td><input type="text" class="form-control me-2" style="width: 250px;" placeholder="Введите данные" th:field="*{client.email}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding-top: 20px;">
+                            <button type="submit" class="btn-custom-search";>Сохранить</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
 <!-- Bootstrap JS -->

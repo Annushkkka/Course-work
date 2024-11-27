@@ -11,29 +11,29 @@
     <button class="back-button" onclick="goback()">< Назад</button>
 </div>
 <h1>Редактировать услугу</h1>
-<div class="table">
-    <div class="col-md-8 offset-md-4">
+<div class="d-flex justify-content-center">
+    <div class="col-md-15">
         <form th:action="@{/service/save}" th:obgect="${service}" method="post">
-            <table>
+            <table style="width: 120%;">
                 <tr>
-                    <td>ID услуги</td>
+                    <td style="text-align: left;">ID услуги</td>
                     <td><input type="text" th:field="*{service.id}" readonly="readonly"></td>
                 </tr>
                 <tr>
-                    <td>название услуги</td>
+                    <td style="text-align: left;">название услуги</td>
                     <td><input type="text" th:field="*{service.name}"></td>
                 </tr>
                 <tr>
-                    <td>Базовая стоимость услуги</td>
+                    <td style="text-align: left;">Базовая стоимость услуги</td>
                     <td><input type="text" th:field="*{service.basePrice}"></td>
                 </tr>
                 <tr>
-                    <td>Продолжительность услуги</td>
+                    <td style="text-align: left;">Продолжительность услуги</td>
                     <td><input type="text" th:field="*{service.durationMinutes}"></td>
                 </tr>
                 <tr>
-                    <td>
-                        <button type="submit" class="btn-custom-search" data-toogle="button" aria-pressed="false" aria-autocomplete="off">Сохранить</button>
+                    <td colspan="2" style="text-align: center; padding-top: 20px;">
+                        <button type="submit" class="btn-custom-search";>Сохранить</button>
                     </td>
                 </tr>
             </table>
