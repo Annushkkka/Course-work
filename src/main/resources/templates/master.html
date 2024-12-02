@@ -57,7 +57,7 @@
                 <th scope="row" class="text-black" th:text="${master.birthDate}"></th>
                 <th scope="row" class="text-black" th:text="${master.phone}"></th>
                 <th scope="row" class="text-black" th:text="${master.email}"></th>
-                <th scope="row" class="text-black" th:text="${master.category}"></th>
+                <th scope="row" class="text-black" th:text="${master.category.id}"></th>
                 <td>
                     <a th:href="@{'/master/edit/'+${master.id}}">
                         <button type="button" class="btn-custom-search">Редактировать</button>
