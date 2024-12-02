@@ -6,6 +6,13 @@ import java.util.List;
 
 public interface MasterServiceRepository extends JpaRepository<MasterService, Integer> {
     @Query("SELECT ms FROM MasterService ms " +
-            "where concat(ms.master, ms.service) LIKE %?1%")
+            "WHERE CONCAT(ms.master.id, ' ', " +
+            "ms.service.id, ' ', " +
+            "ms.master.firstName, ' ', " +
+            "ms.master.lastName, ' ', " +
+            "ms.master.middleName, ' ', " +
+            "ms.service.name, ' ', " +
+            "ms.service.basePrice, ' ', " +
+            "ms.master.category.priceMultiplier) LIKE %?1%")
     List<MasterService> search(String keyword);
 }

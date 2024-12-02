@@ -40,12 +40,24 @@
         <tr>
             <th scope="col">ID мастера</th>
             <th scope="col">ID услуги</th>
+            <th scope="col">Имя мастера</th>
+            <th scope="col">Фамилия мастера</th>
+            <th scope="col">Отчество мастера</th>
+            <th scope="col">Название услуги</th>
+            <th scope="col">Базовая стоимость услуги</th>
+            <th scope="col">Увеличение стоимости услуги</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="master_service: ${masterServiceList}">
-            <th scope="row" class="text-black" th:text="${master_service.master}"></th>
-            <th scope="row" class="text-black" th:text="${master_service.service}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.master.id}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.service.id}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.master.firstName}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.master.lastName}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.master.middleName}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.service.name}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.service.basePrice}"></th>
+            <th scope="row" class="text-black" th:text="${master_service.master.category.priceMultiplier}"></th>
             <td>
                 <a th:href="@{'/master_service/edit/'+${master_service.master}}">
                     <button type="button" class="btn-custom-search">Редактировать</button>
