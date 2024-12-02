@@ -36,6 +36,9 @@ body.other_page {
     flex-direction: column; /* Располагаем элементы в колонку */
     border-radius: 20px; /* Скругляем углы контейнера */
     backdrop-filter: blur(10px); /* Размываем фон */
+    /* Отступы внутри контейнера */
+    padding-left: 80px; /* Отступ слева */
+    padding-right: 80px; /* Отступ справа */
 }
 
 /* Контейнер для элементов над таблицей */

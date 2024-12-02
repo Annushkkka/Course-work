@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.List;
 
@@ -36,10 +37,12 @@ public class BarbershopController {
     }
 
     @GetMapping("/master/delete/{id}")
-    public String deletemaster(@PathVariable Integer id) {
+    public String deleteMaster(@PathVariable Integer id) {
         try {
             barbershopService.deleteMaster(id);
             return "redirect:/master/";
+        } catch (DataIntegrityViolationException e) {
+            return "data_error";
         } catch (Exception e) {
             return "error";
         }
@@ -95,6 +98,8 @@ public class BarbershopController {
         try {
             barbershopService.deleteService(id);
             return "redirect:/service/";
+        } catch (DataIntegrityViolationException e) {
+            return "data_error";
         } catch (Exception e) {
             return "error";
         }
