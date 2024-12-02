@@ -184,3 +184,18 @@ h3{
     margin-right: auto;          /* Центрируем контейнер по горизонтали */
 }
 
+.back-button:active {
+    box-shadow: 0 0 10px rgba(55, 58, 54, 0.6);
+}
+.btn-custom-search:active{
+    box-shadow: 0 0 10px rgba(55, 58, 54, 0.6);
+}
+.btn-custom-clear:active{
+    box-shadow: 0 0 10px rgba(55, 58, 54, 0.6);
+}
+
+.edit-button:active {
+    box-shadow: 0 0 10px rgba(55, 58, 54, 0.6);
+}
+
+
