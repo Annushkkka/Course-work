@@ -38,18 +38,13 @@ body.other_page {
     backdrop-filter: blur(10px); /* Размываем фон */
 }
 
-.table_container{
-    /*height: 350px;  Высота контейнера */
-    width: 1200px;
-    display: flex; /* Включаем Flexbox */
-    justify-content: center; /* Выравнивание элементов по горизонтали */
-    align-items: center; /* Выравнивание элементов по вертикали */
-    text-align: center; /* Выравнивание текста внутри каждого элемента */
-    /*background-color: #E6E2DD; /* Цвет фона */
-    background-color: rgba(230, 226, 221, 0.7); /* Полупрозрачный фон */
-    flex-direction: column; /* Располагаем элементы в колонку */
-    border-radius: 20px; /* Скругляем углы контейнера */
-    backdrop-filter: blur(10px); /* Размываем фон */
+/* Контейнер для элементов над таблицей */
+.container-table {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Заголовк и текст */

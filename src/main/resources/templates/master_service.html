@@ -11,11 +11,9 @@
 <div class="back-button-container">
     <!-- Кнопка перехода -->
     <button class="back-button" onclick="goToHome()">< На главную</button>
-    <!-- Кнопка добавления -->
-    <button class="edit-button" onclick="editMasterService()">+ Добавить новую связь</button>
 </div>
 <div class="tab-pane fade show active" id="masters" role="tabpanel" aria-labelledby="masters-tab">
-    <div style="margin-top: 40px;">
+    <div class="container-table">
         <!-- Заголовок -->
         <div class="row">
             <div class="col text-center">
@@ -58,16 +56,6 @@
             <th scope="row" class="text-black" th:text="${master_service.service.name}"></th>
             <th scope="row" class="text-black" th:text="${master_service.service.basePrice}"></th>
             <th scope="row" class="text-black" th:text="${master_service.master.category.priceMultiplier}"></th>
-            <td>
-                <a th:href="@{'/master_service/edit/'+${master_service.master}}">
-                    <button type="button" class="btn-custom-search">Редактировать</button>
-                </a>
-            </td>
-            <td>
-                <a th:href="@{'/master_service/delete/'+${master_service.master}}">
-                    <button type="button" class="btn-custom-clear">Удалить</button>
-                </a>
-            </td>
         </tr>
         </tbody>
     </table>
@@ -83,10 +71,6 @@
     // Функция для перехода на стартовую страницу
     function goToHome() {
         window.location = "[[@{/}]]"
-    }
-    // Функция для перехода на стартовую страницу
-    function editMasterService() {
-        window.location = "[[@{/master_service/new}]]"
     }
 </script>
 </body>
