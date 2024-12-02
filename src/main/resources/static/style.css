@@ -25,7 +25,7 @@ body.other_page {
 
 /* Контейнер на главной странице */
 .container {
-    height: 350px; /* Высота контейнера */
+    height: 400px; /* Высота контейнера */
     width: 900px;
     display: flex; /* Включаем Flexbox */
     justify-content: center; /* Выравнивание элементов по горизонтали */
