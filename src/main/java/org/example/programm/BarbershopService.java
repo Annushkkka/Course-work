@@ -84,4 +84,34 @@ public class BarbershopService {
         repoClient.save(client);
     }
 
+    // Методы для класса MasterService
+    // Вывод всего списка
+    public List<MasterService> getAllMasterService(String keyword) {
+        if (keyword != null) {
+            return repoMasterService.search(keyword);
+        }
+        return repoMasterService.findAll();
+    }
+    // Получение информации по услуге
+    public MasterService getMasterService(Integer id) {
+        return repoMasterService.findById(id).get();
+    }
+    // Удаление услуги
+    public void deleteMasterService(Integer id) {
+        repoMasterService.deleteById(id);
+    }
+    //Сохранение клиентов
+    public void saveMasterService(@ModelAttribute("master_service") MasterService MasterService) {
+        repoMasterService.save(MasterService);
+    }
+
+    // Методы для класса Категрий
+    // Вывод всего списка
+    public List<Category> getAllCategory(String keyword) {
+        if (keyword != null) {
+            return repoCategory.search(keyword);
+        }
+        return repoCategory.findAll();
+    }
+
 }

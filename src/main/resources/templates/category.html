@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информационно-справочная система барбершопа (категории)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body class="other_page">
+<div class="back-button-container">
+    <!-- Кнопка перехода -->
+    <button class="back-button" onclick="goToHome()">< На главную</button>
+</div>
+<div class="tab-pane fade show active" id="category" role="tabpanel" aria-labelledby="category-tab">
+    <div style="margin-top: 40px;">
+        <!-- Заголовок -->
+        <div class="row">
+            <div class="col text-center">
+                <h3>Категории мастеров</h3>
+            </div>
+        </div>
+        <!-- Поиск и кнопка добавления -->
+        <div class="row justify-content-center" style="width: 1500px;">
+            <!-- Блок поиска -->
+            <div class="col-12 text-center">
+                <h6>Поиск категории по любому критерию:</h6>
+                <form th:action="@{/category/}" class="d-flex justify-content-center align-items-center">
+                    <input type="text" name="keyword" id="keyword-category" class="form-control me-2" style="width: 600px;" th:value="${keyword}" placeholder="Введите данные">
+                    <input type="submit" class="btn-custom-search me-2" value="Поиск">
+                    <input type="button" class="btn-custom-clear" value="Очистить" id="btnClear-master" onclick="clearSearch()">
+                </form>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID категории</th>
+            <th scope="col">Название категории</th>
+            <th scope="col">Увеличение стоимости услуги</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category: ${categoryList}">
+            <th scope="row" class="text-black" th:text="${category.id}"></th>
+            <th scope="row" class="text-black" th:text="${category.name}"></th>
+            <th scope="row" class="text-black" th:text="${category.priceMultiplier}"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+jHvh+3Wjp3JdI6tkpU6pM6voW8FKB8w3/4" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/category/}]]"
+    }
+    // Функция для перехода на стартовую страницу
+    function goToHome() {
+        window.location = "[[@{/}]]"
+    }
+</script>
+</body>
+</html>

@@ -123,4 +123,48 @@ public class BarbershopController {
         mav.addObject("client", client);
         return mav;
     }
+
+    @GetMapping("/master_service/")
+    public String masterservice(Model model, @Param("keyword")String keyword) {
+        List<MasterService> masterServiceList = barbershopService.getAllMasterService(keyword);
+        model.addAttribute("masterServiceList", masterServiceList);
+        model.addAttribute("keyword", keyword);
+        return "master_service";
+    }
+
+    @GetMapping("/master_service/delete/{id}")
+    public String deleteMasterService(@PathVariable Integer id) {
+        barbershopService.deleteMasterService(id);
+        return "redirect:/master_service/";
+    }
+
+    @RequestMapping("/master_service/new")
+    public String newMasterService(Model model) {
+        MasterService MasterService = new MasterService();
+        model.addAttribute("MasterService", MasterService);
+        return "newmaster_service"; // Шаблон для создания нового клиента
+    }
+
+    @PostMapping("/master_service/save")
+    public String saveMasterService(@ModelAttribute("MasterService") MasterService MasterService) {
+        barbershopService.saveMasterService(MasterService);
+        return "redirect:/master_service/";
+    }
+
+    @GetMapping("/master_service/edit/{id}")
+    public ModelAndView editMasterService(@PathVariable Integer id) {
+        ModelAndView mav = new ModelAndView("editMasterService");
+        MasterService MasterService = barbershopService.getMasterService(id);
+        mav.addObject("MasterService", MasterService);
+        return mav;
+    }
+
+
+    @GetMapping("/category/")
+    public String category(Model model, @Param("keyword")String keyword) {
+        List<Category> categoryList = barbershopService.getAllCategory(keyword);
+        model.addAttribute("categoryList", categoryList);
+        model.addAttribute("keyword", keyword);
+        return "category";
+    }
 }
