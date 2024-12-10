@@ -205,49 +205,6 @@ public class BarbershopController {
         }
     }
 
-    @GetMapping("/master_service/delete/{id}")
-    public String deleteMasterService(@PathVariable Integer id) {
-        try {
-            barbershopService.deleteMasterService(id);
-            return "redirect:/master_service/";
-        } catch (Exception e) {
-            return "error";
-        }
-    }
-
-    @RequestMapping("/master_service/new")
-    public String newMasterService(Model model) {
-        try {
-            MasterService MasterService = new MasterService();
-            model.addAttribute("MasterService", MasterService);
-            return "newmaster_service"; // Шаблон для создания нового клиента
-        } catch (Exception e) {
-            return "error";
-        }
-    }
-
-    @PostMapping("/master_service/save")
-    public String saveMasterService(@ModelAttribute("MasterService") MasterService MasterService) {
-        try {
-            barbershopService.saveMasterService(MasterService);
-            return "redirect:/master_service/";
-        } catch (Exception e) {
-            return "error";
-        }
-    }
-
-    @GetMapping("/master_service/edit/{id}")
-    public ModelAndView editMasterService(@PathVariable Integer id) {
-        try {
-            ModelAndView mav = new ModelAndView("editMasterService");
-            MasterService MasterService = barbershopService.getMasterService(id);
-            mav.addObject("MasterService", MasterService);
-            return mav;
-        } catch (Exception e) {
-            return new ModelAndView("error");
-        }
-    }
-
     @GetMapping("/category/")
     public String category(Model model, @Param("keyword") String keyword) {
         try {

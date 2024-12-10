@@ -92,18 +92,6 @@ public class BarbershopService {
         }
         return repoMasterService.findAll();
     }
-    // Получение информации по услуге
-    public MasterService getMasterService(Integer id) {
-        return repoMasterService.findById(id).get();
-    }
-    // Удаление услуги
-    public void deleteMasterService(Integer id) {
-        repoMasterService.deleteById(id);
-    }
-    //Сохранение клиентов
-    public void saveMasterService(@ModelAttribute("master_service") MasterService MasterService) {
-        repoMasterService.save(MasterService);
-    }
 
     // Методы для класса Категрий
     // Вывод всего списка
